@@ -1,0 +1,115 @@
+// Navigation
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    height: 100px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto 960px auto;
+    grid-template-areas:
+        ". container .";
+    transition: 300ms ease-in-out;
+    -webkit-backface-visibility:hidden; 
+    -webkit-transform: translateZ(0);
+
+    &--scrolled {
+        height: 65px;
+        box-shadow: 0 0 2em rgba($color_black, 0.1);
+    }
+
+    @include for-phone-only {
+        overflow: scroll;
+        grid-template-columns: $padding 1fr $padding;
+        height: 65px;
+    }
+
+    @include for-tablet-portrait-only {
+        overflow: scroll;
+        grid-template-columns: 1fr 8fr 1fr;
+    }
+}
+
+.nav {
+    grid-area: container;
+    transition: 300ms ease-in-out;
+
+    &-ul {
+        height: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    &-li {
+        display: inline-block;
+        height: auto;
+
+    }
+
+    &-a {
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        color: black;
+
+        @include for-phone-only {
+            padding: 10px 15px 10px 15px;
+            // margin-right: 10px;
+            &::after {
+                position: relative;
+            }
+        }
+
+        @include for-tablet-portrait-up {
+            &::after {
+                content: '';
+                position: absolute;
+                width: 130%;
+                transform: scaleX(0);
+                height: 1px;
+                bottom: 0;
+                top: 50%;
+                left: -15%;
+                background-color: $color_black;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+
+            &:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+        }
+    }
+}
+
+.bounce {
+    animation: none;
+    @include for-phone-only {
+        animation: bounce 800ms ease-in-out 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-25px);
+    }
+    75% {
+        transform: translateX(-25px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

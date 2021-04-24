@@ -1,0 +1,569 @@
+// Base
+
+body {
+    background-color: $color_off_white;
+    color: $color_dark_blue;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+iframe {
+    width: 100%;
+    height: 200px;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 25px;
+
+    @include for-desktop-up {
+        width: 960px;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.hero {
+    background-color: white;
+    overflow: hidden;
+
+    &-logo {
+        position: relative;
+        z-index: 1;
+        display: block;
+        margin: 25px auto 0;
+        width: 80%;
+        opatop-section: .05;
+
+        @include for-phone-only {
+            opatop-section: .15;
+        }
+
+        @include for-tablet-portrait-up {
+            transform: translateY(60%);
+            width: 70%;
+        }
+    }
+
+    &-album {
+        position: relative;
+        z-index: 0;
+
+        @include for-phone-only {
+            transform: scale(1.2) translateY(-5%);
+        }
+    }
+}
+
+.music {
+    overflow: auto;
+    color: $color_off_white;
+    background-color: $color_dark_red;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @include for-phone-only {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    @include for-tablet-portrait-only {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-areas:
+            "album info"
+            "album links";
+        grid-column-gap: 100px;
+
+        @include for-phone-only {
+            grid-template-areas:
+                "info"
+                "album"
+                "links";
+            grid-column-gap: unset;
+        }
+
+        @include for-tablet-portrait-only {
+            grid-column-gap: 25px;
+        }
+    }
+
+    &__headline {
+        margin-top: 25px;
+        font-size: 40px;
+        line-height: 1;
+        letter-spacing: -.02em;
+        grid-area: info;
+
+        @include for-phone-only {
+            font-size: 24px;
+            line-height: 1.45;
+        }
+
+        @include for-tablet-portrait-only {
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+    }
+
+    &__links {
+        grid-area: links;
+
+        a {
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.featured-album {
+    grid-area: album;
+    position: relative;
+    overflow: hidden;
+    width: 460px;
+
+    @include for-phone-only {
+        width: 100%;
+        margin: 25px 0;
+    }
+
+    @include for-tablet-portrait-only {
+        width: 350px;
+    }
+
+    &__art {
+        display: block;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 11px 38px rgba($color_black, .1);
+    }
+
+    &__spotify {
+        position: absolute;
+        width: 95%;
+        height: 95%;
+        top: 100%;
+        left: 2.5%;
+    }
+
+    &__play-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba($color_black, .25);
+        background-image: url('images/play-btn.png');
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: center;
+    }
+}
+
+.shows {
+    color: $color_dark_blue;
+    padding-top: 100px;
+    padding-bottom: 200px;
+    background-color: $color_off_white;
+
+    @include for-phone-only {
+        padding-top: 50px;
+        padding-bottom: 100px;
+    }
+}
+
+.show {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    grid-template-areas:
+        "month top-section link"
+        "date info .";
+    grid-column-gap: 35px;
+    border-top: 2px solid $color_dark_red;
+    padding: 10px 0;
+
+    @include for-phone-only {
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas:
+            "month top-section top-section"
+            "date info info"
+            ". link link";
+    }
+
+    &-date {
+        grid-area: month;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+    }
+
+    &-top-section {
+        grid-area: top-section;
+    }
+
+    &-info {
+        grid-area: info;
+    }
+
+    &-link {
+        grid-area: link;
+    }
+
+    a::after {
+        background-color: $color_dark_blue;
+    }
+}
+
+.show:last-child {
+    border-bottom: 2px solid $color_black;
+}
+
+.show-player {
+    top: 2.5%;
+}
+
+.about {
+    overflow: auto;
+    background-color: $color_off_white;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: $color_dark_blue;
+
+    @include for-phone-only {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1.85fr;
+        grid-template-areas:
+            "title ."
+            ". intro"
+            "photo photo"
+            "photo photo"
+            ". about";
+
+        @include for-phone-only {
+            padding: 0 25px;
+            grid-template-areas:
+                "title title"
+                "intro intro"
+                "photo photo"
+                "photo photo"
+                "about about";
+        }
+    }
+
+    h2 {
+        grid-area: title;
+    }
+
+    &-intro {
+        font-size: 32px;
+        grid-area: intro;
+        margin-bottom: -67px;
+        z-index: 1;
+
+        @include for-phone-only {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &-img {
+        grid-area: photo;
+    }
+
+    &-main {
+        grid-area: about;
+    }
+}
+
+.contact {
+    background-color: $color_dark_blue;
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 25px;
+
+    @include for-phone-only {
+        padding-top: 50px;
+    }
+
+    .container {
+        padding: 0 25px;
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+        grid-template-rows: 1fr 1fr 2fr;
+        grid-template-areas:
+            "title title title"
+            "cta cta cta"
+            "link-col-1 link-col-2 ."
+            "copyright copyright copyright";
+        margin: 0 auto;
+
+        @include for-desktop-up {
+            grid-template-columns: 3fr 1fr 1fr;
+            grid-template-rows: 1fr 2fr auto;
+            grid-template-areas:
+                "title . ."
+                "cta link-col-1 link-col-2"
+                "copyright . .";
+        }
+    }
+
+    h2 {
+        grid-area: title;
+    }
+
+    .contact-btn {
+        grid-area: cta;
+        display: block;
+        border: 1px solid white;
+        width: 380px;
+        height: 75px;
+        text-align: center;
+        line-height: 75px;
+        text-decoration: none;
+
+        @include for-phone-only {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        &:hover {
+            text-decoration: line-through;
+        }
+
+        &::after {
+            content: '';
+            position: initial;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0;
+            top: 48%;
+            left: 0;
+            background-color: $color_off_white;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+    }
+
+    .links a {
+        margin-bottom: 15px;
+    }
+
+    .link-col-1 {
+        grid-area: link-col-1;
+    }
+
+    .link-col-2 {
+        grid-area: link-col-2;
+    }
+
+    .copyright {
+        grid-area: copyright;
+        opatop-section: .2;
+    }
+}
+
+.music-page {
+    padding-bottom: 50px;
+}
+
+.music__copy {
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.album {
+    margin-bottom: 25px;
+
+    @include for-desktop-up {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "album hr"
+            "album name";
+        grid-gap: 25px;
+    }
+
+    @include for-phone-only {
+        display: block;
+    }
+
+    &__embed {
+        grid-area: album;
+        width: 100%;
+
+        @include for-desktop-up {
+            width: 400px;
+            height: 400px;
+        }
+    }
+
+    &__name {
+        display: none;
+        grid-area: name;
+        margin: 0;
+
+        @include for-desktop-up {
+            display: block;
+        }
+    }
+
+    &__divider {
+        display: none;
+        grid-area: hr;
+        align-self: start;
+        margin: 0;
+        width: 100%;
+        background-color: $color_black;
+        border: none;
+        height: 1px;
+
+        @include for-desktop-up {
+            display: block;
+        }
+    }
+}
+
+.music-videos__carousel {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @include for-phone-only {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .carousel-cell {
+        margin-right: 50px;
+
+        @include for-phone-only {
+            margin-right: 10px;
+        }
+    }
+}
+
+.video {
+    width: 70vw;
+    height: calc((75vw)/1.77);
+}
+
+.lyrics-album {
+
+
+    @include for-desktop-up {
+        display: grid;
+        grid-gap: 10%;
+    }
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    &__itbot {
+        grid-template-areas: "lyrics title";
+    }
+    &__cz {
+        grid-template-areas: "title lyrics";
+    }
+    h3 {
+        grid-area: title;
+    }
+}
+
+.lyrics-divider {
+    background-color: $color_dark_blue;
+    border: 0;
+    height: 1px;
+}
+
+.lyrics-carousel {
+    grid-area: lyrics;
+    width: 100%;
+    height: 300px;
+
+    @include for-desktop-up {
+        width: 600px;
+        height: 600px;
+    }
+
+    .carousel-cell {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .flickity-button {
+        background: transparent;
+        height: 100%;
+    }
+
+    .flickity-prev-next-button {
+        width: 25px;
+        height: 100%;
+        border-radius: 0;
+
+        &.next {
+            // right: 0;
+            // cursor: e-resize;
+        }
+
+        &.previous {
+            // left: 0;
+            // cursor: w-resize;
+        }
+    }
+
+    .flickity-button-icon {
+        fill: $color_black;
+    }
+
+    .flickity-button:disabled {
+        display: none;
+    }
+
+    .flickity-page-dots {
+        bottom: 2.5px;
+
+        .dot {
+            height: 5px;
+            width: 5px;
+        }
+    }
+
+    img {
+        transform: scale(.8);
+        margin: 0;
+    }
+}

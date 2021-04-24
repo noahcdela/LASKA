@@ -1,0 +1,78 @@
+// Typography
+
+%font-main {
+    font-family: 'Inconsolata', monospace;
+}
+
+::selection {
+	background-color: $color_black;
+	color: white;
+}
+
+html {
+    -webkit-font-smoothing: antialiased; // Fix fatty fonts
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: regular;
+    line-height: 1.45;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    color: $color_black;
+    @extend %font-main;
+}
+
+a {
+    color: inherit;
+}
+
+body {
+    font-size: 18px;
+    @include for-phone-only {
+        font-size: 14px;
+    }
+}
+
+h2 {
+    font-size: 64px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    @include for-phone-only {
+        font-size: 42px;
+    }
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+a {
+    display: inline-block;
+    position: relative;
+    &:hover {
+        text-decoration: none;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: 0;
+        top: 48%;
+        left: 0;
+        background-color: white;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}
+
+.ab-item::after { 
+    position: relative;
+}
