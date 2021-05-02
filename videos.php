@@ -9,19 +9,32 @@
 
     <div class="music-videos__carousel">
         <div class="carousel-cell">
-            <iframe class="video" src="https://www.youtube.com/embed/H-aaook2l58" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            <iframe class="video" src="https://www.youtube.com/embed/W5f8vIhXgNA" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe> </div>
+        <div class="carousel-cell">
+            <iframe class="video" src="https://www.youtube.com/embed/nGgX7mdouIE" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
         </div>
         <div class="carousel-cell">
-            <iframe class="video" src="https://www.youtube.com/embed/olgO08hA0TQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            <iframe class="video" src="https://www.youtube.com/embed/H-aaook2l58" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
         </div>
         <div class="carousel-cell">
-            <iframe class="video" src="https://www.youtube.com/embed/UCW9AgUa0dU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            <iframe class="video" src="https://www.youtube.com/embed/olgO08hA0TQ" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
         </div>
         <div class="carousel-cell">
-            <iframe class="video" src="https://www.youtube.com/embed/Qiho-0Z8PRw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            <iframe class="video" src="https://www.youtube.com/embed/UCW9AgUa0dU" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <div class="carousel-cell">
+            <iframe class="video" src="https://www.youtube.com/embed/Qiho-0Z8PRw" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
         </div>
     </div>

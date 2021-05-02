@@ -29,7 +29,7 @@
                 <li class="nav-li"><a class="nav-a page-scroll" href="<?php echo site_url('/music'); ?>">Music</a></li>
                 <li class="nav-li"><a class="nav-a page-scroll" href="<?php echo home_url(); ?>#shows">Shows</a></li>
                 <li class="nav-li"><a class="nav-a page-scroll" href="<?php echo site_url('/videos'); ?>">Videos</a></li>
-                <li class="nav-li"><a class="nav-a page-scroll" href="<?php echo site_url('/lyrics'); ?>">Lyrics</a></li>
+                <!-- <li class="nav-li"><a class="nav-a page-scroll" href="<?php echo site_url('/lyrics'); ?>">Lyrics</a></li> -->
                 <li class="nav-li"><a class="nav-a page-scroll" href="#contact">Contact</a></li>
             </ul>
         </nav>

@@ -14,9 +14,9 @@
         <img class="about-img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
         <?php endif; ?>
 
-        <p class="about-main">
+        <div class="about-main">
             <?php the_field('about'); ?>
-        </p>
+        </div>
     </div>
 </section>
 

@@ -35,42 +35,63 @@ img {
     height: auto;
 }
 
+section:first-of-type {
+    @include for-desktop-up {
+        margin-top: -80px;
+    }
+}
+
 .hero {
-    background-color: white;
-    overflow: hidden;
+    position: relative;
+    background-color: rgb(14, 20, 56);
+    height: calc(100vh - 80px);
+    height: 100vh;
+    width: 100%;
+
+
+    @include for-phone-only {
+        height: 300px;
+        margin-top: 0;
+    }
 
     &-logo {
-        position: relative;
+        position: absolute;
         z-index: 1;
         display: block;
-        margin: 25px auto 0;
-        width: 80%;
-        opatop-section: .05;
+        top: 33.33%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
         @include for-phone-only {
-            opatop-section: .15;
+            top: 22%;
+            width: 60%;
+            opacity: .8;
         }
 
         @include for-tablet-portrait-up {
-            transform: translateY(60%);
-            width: 70%;
+            width: 80%;
+            filter: invert(1);
+            opacity: .4;
         }
+    }
+
+    &_image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     &-album {
         position: relative;
         z-index: 0;
-
-        @include for-phone-only {
-            transform: scale(1.2) translateY(-5%);
-        }
     }
 }
 
 .music {
     overflow: auto;
     color: $color_off_white;
-    background-color: $color_dark_red;
+    background-color: $color_fader-blue;
     padding-top: 100px;
     padding-bottom: 100px;
 
@@ -105,14 +126,13 @@ img {
     }
 
     &__headline {
-        margin-top: 25px;
-        font-size: 40px;
-        line-height: 1;
-        letter-spacing: -.02em;
         grid-area: info;
+        h2 {
+            opacity: .8;
+        }
 
         @include for-phone-only {
-            font-size: 24px;
+            font-size: 32px;
             line-height: 1.45;
         }
 
@@ -239,59 +259,37 @@ img {
 
 .about {
     overflow: auto;
-    background-color: $color_off_white;
+    background-color: $color_fader-blue;
     padding-top: 100px;
     padding-bottom: 100px;
-    color: $color_dark_blue;
+    color: $color_off_white;
 
     @include for-phone-only {
         padding-top: 50px;
         padding-bottom: 50px;
     }
 
-    .container {
-        display: grid;
-        grid-template-columns: 1fr 1.85fr;
-        grid-template-areas:
-            "title ."
-            ". intro"
-            "photo photo"
-            "photo photo"
-            ". about";
-
-        @include for-phone-only {
-            padding: 0 25px;
-            grid-template-areas:
-                "title title"
-                "intro intro"
-                "photo photo"
-                "photo photo"
-                "about about";
-        }
-    }
-
-    h2 {
-        grid-area: title;
-    }
-
     &-intro {
-        font-size: 32px;
-        grid-area: intro;
-        margin-bottom: -67px;
+        position: relative;
         z-index: 1;
+        font-size: 32px;
+        margin-bottom: -67px;
+        margin-left: 33.33%;
 
         @include for-phone-only {
             font-size: 18px;
             margin-bottom: 15px;
+            margin-left: 0;
         }
     }
 
-    &-img {
-        grid-area: photo;
-    }
-
     &-main {
-        grid-area: about;
+        position: relative;
+        margin-left: 33.33%;
+
+        @include for-phone-only {
+            margin-left: 0;
+        }
     }
 }
 
@@ -391,6 +389,7 @@ img {
 
 .music-page {
     padding-bottom: 50px;
+    padding-top: 80px;
 }
 
 .music__copy {

@@ -4,8 +4,8 @@
     position: sticky;
     top: 0;
     z-index: 2;
-    height: 100px;
-    background-color: white;
+    height: 80px;
+    background-color: transparent;
     display: grid;
     grid-template-columns: auto 960px auto;
     grid-template-areas:
@@ -13,16 +13,27 @@
     transition: 300ms ease-in-out;
     -webkit-backface-visibility:hidden; 
     -webkit-transform: translateZ(0);
+    @include for-phone-only {
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 33.33%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+            right: 0;
+            pointer-events: none;
+        }
+    }
 
     &--scrolled {
-        height: 65px;
-        box-shadow: 0 0 2em rgba($color_black, 0.1);
+        background-color: rgba(white,.9);
     }
 
     @include for-phone-only {
-        overflow: scroll;
         grid-template-columns: $padding 1fr $padding;
-        height: 65px;
+        height: 60px;
+        background-color: white;
     }
 
     @include for-tablet-portrait-only {
@@ -34,6 +45,7 @@
 .nav {
     grid-area: container;
     transition: 300ms ease-in-out;
+    overflow: scroll;
 
     &-ul {
         height: 100%;
@@ -50,7 +62,11 @@
     &-li {
         display: inline-block;
         height: auto;
-
+            @include for-phone-only {
+            &:last-of-type {
+                padding-right: 50px;
+            }
+        }
     }
 
     &-a {
@@ -63,7 +79,6 @@
 
         @include for-phone-only {
             padding: 10px 15px 10px 15px;
-            // margin-right: 10px;
             &::after {
                 position: relative;
             }
@@ -92,24 +107,24 @@
     }
 }
 
-.bounce {
-    animation: none;
-    @include for-phone-only {
-        animation: bounce 800ms ease-in-out 1;
-    }
-}
+// .bounce {
+//     animation: none;
+//     @include for-phone-only {
+//         animation: bounce 800ms ease-in-out 1;
+//     }
+// }
 
-@keyframes bounce {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(-25px);
-    }
-    75% {
-        transform: translateX(-25px);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
+// @keyframes bounce {
+//     0% {
+//         transform: translateX(0);
+//     }
+//     50% {
+//         transform: translateX(-25px);
+//     }
+//     75% {
+//         transform: translateX(-25px);
+//     }
+//     100% {
+//         transform: translateX(0);
+//     }
+// }

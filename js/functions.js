@@ -25,10 +25,10 @@ $(function () {
   function headerAnimation(scroll) {
     if (scroll > 65) {
       $('header').addClass('header--scrolled');
-      $('.nav-ul').addClass('bounce');
+      // $('.nav-ul').addClass('bounce');
     } else {
       $('header').removeClass('header--scrolled');
-      $('.nav-ul').removeClass('bounce');
+      // $('.nav-ul').removeClass('bounce');
     }
   }
 

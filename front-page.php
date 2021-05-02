@@ -2,24 +2,24 @@
 <?php get_header();?>
 
 <section id="hero" class="hero">
-    <div class="container">
+
         <h1 class="sr-only">
             <?php bloginfo('title'); ?>
         </h1>
+
         <img class="hero-logo" src="<?php echo get_template_directory_uri() . '/images/laska-logo.svg'; ?>" alt="LASKA">
+
         <?php 
-        $image = get_field('featured_album');
+        $image = get_field('hero_image');
         if( !empty($image) ): ?>
-        <img class="hero-album" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+        <img class="hero_image" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
         <?php endif; ?>
-    </div>
+
 </section>
 
 <section id="music" class="music">
 
     <div class="container">
-
-        <h2 class="sr-only">Music</h2>
 
         <div class="featured-album">
             <div class="featured-album__play-btn"></div>
@@ -35,7 +35,7 @@
 
         <?php if( get_field('music_headline') ): ?>
         <div class="music__headline">
-            <?php the_field('music_headline'); ?>
+            <h2><?php the_field('music_headline'); ?></h2>
         </div>
         <?php endif; ?>
 

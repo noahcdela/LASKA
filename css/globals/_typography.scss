@@ -36,7 +36,9 @@ h2 {
     font-size: 64px;
     font-weight: lighter;
     text-transform: uppercase;
-    letter-spacing: .2em;
+    letter-spacing: .04em;
+    line-height: 1;
+    // text-align: center;
     @include for-phone-only {
         font-size: 42px;
     }
