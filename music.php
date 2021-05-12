@@ -15,8 +15,8 @@
         <?php endif; ?>
 
         <div class="album">
-            <iframe class="album__embed" src="" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            <h3 class="album__name">Fader UPDATE 5/7</h3>
+            <iframe class="album__embed" src="https://open.spotify.com/embed/album/6NBTSJhxLFYDtUcijADoUK" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <h3 class="album__name">Fader</h3>
             <hr class="album__divider">
         </div>
 

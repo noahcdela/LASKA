@@ -27,7 +27,8 @@
     }
 
     &--scrolled {
-        background-color: rgba(white,.9);
+        background-color: rgba(white,.8);
+        backdrop-filter: blur(8px);
     }
 
     @include for-phone-only {
